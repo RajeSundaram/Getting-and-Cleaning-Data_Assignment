@@ -83,7 +83,7 @@ names(Merged_Data)<-gsub("BodyBody", "Body", names(Merged_Data))
 #names(Merged_Data) - To verify after replacement 
 
 
-##  create a second, independent tidy data set with the average of each variable for each activity and each subject.
+## 5 create a second, independent tidy data set with the average of each variable for each activity and each subject.
 Merged_Data1<-aggregate(. ~subject + activity, Merged_Data, mean)
 Merged_Data1<-Merged_Data1[order(Merged_Data1$subject,Merged_Data1$activity),]
 write.table(Merged_Data1, file = "./UCI HAR Dataset/tidydataset.txt",row.name=FALSE)
